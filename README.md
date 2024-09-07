@@ -18,3 +18,8 @@ python main.py
 - endpoint for all products
 - search products by name (Ukranian language)
 - search exact field at product
+
+## Time:
+- ~30m - scraper
+- ~30m - FastApi routes
+- ~1h - refactoring code

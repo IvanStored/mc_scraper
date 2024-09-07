@@ -13,10 +13,8 @@ class ProductService:
 
     products = None
 
-
     async def __initialize(self):
         await self.get_all_products()
-
 
     def __init__(self):
         asyncio.run(self.__initialize())
@@ -40,18 +38,16 @@ class ProductService:
             return results
         raise HTTPException(
             status_code=http.HTTPStatus.NOT_FOUND,
-            detail=f"Product {query} was not found"
+            detail=f"Product {query} was not found",
         )
+
     def _get_field(self, product: dict, field: str):
         try:
-            return {
-                "name": field,
-                "value": product["nutrients"][field]
-            }
+            return {"name": field, "value": product["nutrients"][field]}
         except KeyError:
             raise HTTPException(
                 status_code=http.HTTPStatus.NOT_FOUND,
-                detail=f"Field {field} was not found"
+                detail=f"Field {field} was not found",
             )
 
     def find_field(self, query: str, field: str):
@@ -59,7 +55,7 @@ class ProductService:
         products_list_with_fields = [
             {
                 "product": product["name"],
-                "field": self._get_field(product=product, field=field)
+                "field": self._get_field(product=product, field=field),
             }
             for product in products_list
         ]

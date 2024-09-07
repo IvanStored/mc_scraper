@@ -1,14 +1,15 @@
 from pydantic import BaseModel, Field
 
+
 class NutrientsOut(BaseModel):
-    calories: float|None = Field(...)
-    fats: float|None = Field(...)
-    carbs: float|None = Field(...)
-    proteins: float|None = Field(...)
-    unsaturated_fats: float|None = Field(...)
-    sugar: float|None = Field(...)
-    salt: float|None = Field(...)
-    portion: float|None = Field(...)
+    calories: float | None = Field(...)
+    fats: float | None = Field(...)
+    carbs: float | None = Field(...)
+    proteins: float | None = Field(...)
+    unsaturated_fats: float | None = Field(...)
+    sugar: float | None = Field(...)
+    salt: float | None = Field(...)
+    portion: float | None = Field(...)
 
 
 class ProductOut(BaseModel):  # define your model
